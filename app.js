@@ -102,12 +102,59 @@ function reverseString(str){
 
 console.log(reverseString('rockstar'));
 
+// !!!!! ALTERNATIVE METHOD !!!!! 
+// Decrementing For Loop
+function reverseString(str) {
+    let revString = "";  // <-- empty string
+    for (let i = str.length - 1; i >= 0; i--) { // <-- starting point last letter goes to zero
+        revString += str[i]; // <-- add on next letter in reverse(i--) -- newString + str[i]
+    }
+    return revString; // <-- gotta have a return (;
+}
+console.log(reverseString('hello'));
+
 
 
 
 
 // 8. Define a function, as a function expression, `longestStringInArray` that takes an array of strings as an argument and returns the longest string's length.
 
+const longestStringInArray = function(arr) {
+    let longest = 0;
+    arr.forEach(function(str) {
+        if (str.length > longest) {  // <-- ask about syntax vs solution answer
+            longest = str.length;   // <-- ask about syntax vs solution answer
+        }
+    });
+    return longest;
+};
 
+// ----- Teacher's Solution: -----
+
+// const longestStringInArray = function(arr) {
+//     let longest = 0;
+//     arr.forEach(function(str) {
+//         if (str.length > longest) longest = str.length;
+//     });
+//     return longest;
+// };
+
+console.log(longestStringInArray(['say', 'hello', 'in', 'the', 'morning']));
 
 // 9. Define a function, as a function declaration, `stringsLongerThan` that takes an array of strings and a number as arguments; and returns an array of the strings that are longer than the number passed in. For example, `stringsLongerThan(['say', 'hello', 'in', 'the', 'morning'], 3);` would return `["hello", "morning"]`.
+
+function stringsLongerThan(arr, length){
+    return arr.filter(str =>{
+       return (str.length  > length) ;
+    });
+};
+
+// ----- Teacher's Solution: -----
+
+// function stringsLongerThan(arr, len) {
+//     // now we're talking!
+//     return arr.filter(function(s) {
+//       return (s.length > len);
+//     });
+// };
+console.log(stringsLongerThan(['say', 'hello', 'in', 'the', 'morning'], 3));
