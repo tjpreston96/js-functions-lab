@@ -122,8 +122,8 @@ console.log(reverseString('hello'));
 const longestStringInArray = function(arr) {
     let longest = 0;
     arr.forEach(function(str) {
-        if (str.length > longest) {  // <-- ask about syntax vs solution answer
-            longest = str.length;   // <-- ask about syntax vs solution answer
+        if (str.length > longest) {  // <-- ask about syntax vs solution answer -- connected
+            longest = str.length;   // <-- ask about syntax vs solution answer -- connected
         }
     });
     return longest;
