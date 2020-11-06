@@ -152,7 +152,6 @@ function stringsLongerThan(arr, length){
 // ----- Teacher's Solution: -----
 
 // function stringsLongerThan(arr, len) {
-//     // now we're talking!
 //     return arr.filter(function(s) {
 //       return (s.length > len);
 //     });
