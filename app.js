@@ -38,8 +38,8 @@ console.log(maxOfThree(5, 22, 12))
 // 3. Define a function, as a function declaration, `isCharAVowel` that takes a character as an argument and returns true if it is a vowel, false otherwise.
 
 function isCharAVowel(char){
-    char = char.toLowerCase();
-    return ('aeiouy'.indexOf(char) > -1);
+    char = char.toLowerCase(); // <-- change to lowerCase
+    return ('aeiouy'.indexOf(char) > -1); // <-- checking string 'aeiouy' for char passed in 
 }
 
 console.log(isCharAVowel('T'));
@@ -54,7 +54,7 @@ const sumArray = function(arr){
     let sum = 0;
     arr.forEach(num => {
         sum += num;
-    });
+    });    
     return sum;
 };
 
@@ -65,18 +65,29 @@ console.log(sumArray([5, 22, 12]));
 
 
 // 5. Define a function, as a function declaration, `multiplyArray` that takes an array of numbers and returns the product of those numbers. For example, `multiplyArray([2, 4, 5]);` would return `40`.
+console.log(multiplyArray([5, 22, 12]));
 
-function multiplyArray(arr){
+function multiplyArray(nums){
     let product = 1; // <-- set product for first iteration -- put as let so var can change
 
-    for (let i = 0; i < arr.length; i++) { // <-- run until function reaches last item in array
+    for (let i = 0; i < nums.length; i++) { // <-- run until function reaches last item in array
 
-        product *= arr[i];   // <-- product = product(1) * arr[i]
+        product *= nums[i];   // <-- product = product(1) * arr[i]
     }
     return product; // <-- all functions must have return
 };
 
-console.log(multiplyArray([5, 22, 12]));
+// !!!!! ALTERNATE METHOD !!!!!
+
+// function multiplyArray(nums) {
+//     let product = 1
+//     nums.forEach(n => {
+//         product *= n    
+//     })
+//     return product
+// }
+// console.log(multiplyArray([5, 10, 2]));
+
 
 
 
@@ -120,8 +131,8 @@ console.log(reverseString('hello'));
 // 8. Define a function, as a function expression, `longestStringInArray` that takes an array of strings as an argument and returns the longest string's length.
 
 const longestStringInArray = function(arr) {
-    let longest = 0;
-    arr.forEach(function(str) {
+    let longest = 0; // <== first iteration value !! will change
+    arr.forEach((str) => {
         if (str.length > longest) {  // <-- ask about syntax vs solution answer -- connected
             longest = str.length;   // <-- ask about syntax vs solution answer -- connected
         }
